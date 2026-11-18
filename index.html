@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CodelyTeam Security Test</title>
+  <style>
+    body {
+      background: #0b1020;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .login {
+      background: #171f33;
+      padding: 30px;
+      border-radius: 15px;
+      width: min(340px, 85%);
+    }
+
+    input, button {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 13px;
+      margin-top: 12px;
+      border-radius: 8px;
+    }
+
+    input {
+      background: #0b1020;
+      color: white;
+      border: 1px solid #39445e;
+    }
+
+    button {
+      background: #6658ed;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    #result { margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div class="login">
+    <h2>CodelyTeam Login</h2>
+    <p>Security testing demonstration</p>
+
+    <input
+      id="password"
+      type="password"
+      placeholder="Enter password"
+    >
+
+    <button onclick="checkPassword()">Login</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    // DEMO ONLY: intentionally insecure!
+    const correctPassword = "Vexora123";
+
+    function checkPassword() {
+      const entered =
+        document.getElementById("password").value;
+
+      const result =
+        document.getElementById("result");
+
+      if (entered === correctPassword) {
+        result.textContent = "Login Successful!";
+        result.style.color = "#22c55e";
+      } else {
+        result.textContent = "Wrong Password!";
+        result.style.color = "#ef4444";
+      }
+    }
+  </script>
+</body>
+</html>
